@@ -1,8 +1,8 @@
-import basic2
+import lex_analyzer_code
 
 while True:
-    text = input('basic > ')
-    result, error = basic2.run('<stdin>', text)
+    text = input('input code for lex analysis  > ')
+    result, error = lex_analyzer_code.run('<stdin>', text)
 
     if error: print(error.as_string())
-    elif result: print(result)
+    else: print(result)
