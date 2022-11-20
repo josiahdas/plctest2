@@ -1,4 +1,4 @@
-#######################################
+#######################################}}}}\\\\\\\\\\\\\="
 # IMPORTS
 #######################################
 
@@ -97,7 +97,7 @@ class Position:
 # TOKENS
 #######################################
 
-TT_INT                = 'INT'
+TT_NUM                = 'NUM'
 TT_FLOAT        = 'FLOAT'
 TT_STRING            = 'STRING'
 TT_IDENTIFIER    = 'IDENTIFIER'
@@ -112,29 +112,29 @@ TT_LPAREN       = 'LPAREN'
 TT_RPAREN       = 'RPAREN'
 TT_LSQUARE    = 'LSQUARE'
 TT_RSQUARE    = 'RSQUARE'
-TT_EE                    = 'EE'
-TT_NE                    = 'NE'
+TT_EE                    = 'EQUAL'
+TT_NE                    = 'NOTEQUAL'
 TT_LT                    = 'LT'
-TT_GT                    = 'GT'
-TT_LTE                = 'LTE'
-TT_GTE                = 'GTE'
+TT_GT                    = 'GREATERTHAN'
+TT_LTE                = 'LESSTHANEQUAL'
+TT_GTE                = 'GREATERTHANEEQUAL'
 TT_COMMA            = 'COMMA'
 TT_ARROW            = 'ARROW'
 TT_NEWLINE        = 'NEWLINE'
-TT_EOF                = 'EOF'
+TT_EOF                = 'ENDOFLINE'
 
 KEYWORDS = [
   'VAR',
   'AND',
   'OR',
   'NOT',
-  'IF',
-  'ELIF',
+  'INCASE',
+  'INCASEIF',
   'ELSE',
-  'FOR',
+  'LOOP',
   'TO',
   'STEP',
-  'WHILE',
+  'WITH',
   'FUN',
   'THEN',
   'END',
@@ -257,7 +257,7 @@ class Lexer:
       self.advance()
 
     if dot_count == 0:
-      return Token(TT_INT, int(num_str), pos_start, self.pos)
+      return Token(TT_NUM, int(num_str), pos_start, self.pos)
     else:
       return Token(TT_FLOAT, float(num_str), pos_start, self.pos)
 
