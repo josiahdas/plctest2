@@ -8,7 +8,7 @@
 using namespace std;
 
 int main(){
-
+    // enter string here for lexer 
     string str = " hello how are 2 * 3 you? 123 4567867*98 end then #kmdksm#";
 
     // define list of patterns
